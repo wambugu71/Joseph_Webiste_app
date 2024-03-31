@@ -1,5 +1,6 @@
 import streamlit as st 
 import os 
+import zipfile
 
 from tensorflow.keras.models import load_model
 
@@ -7,9 +8,8 @@ from tensorflow.keras.models import load_model
 from helper import get_label
 from transformers import DetrImageProcessor, DetrForObjectDetection
 
-os.system('sudo apt-get install unzip')
-os.system('unzip fmd_detection_model.zip')
-
+with zipfile.ZipFile('fmd_detection_model.zip' , "r") as z:
+    z.extractall(".")
 
 def prediction() : 
 
