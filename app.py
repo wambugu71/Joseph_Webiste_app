@@ -7,6 +7,7 @@ from tensorflow.keras.models import load_model
 from helper import get_label
 from transformers import DetrImageProcessor, DetrForObjectDetection
 
+os.system('sudo apt-get install unzip')
 os.system('unzip fmd_detection_model.zip')
 
 
