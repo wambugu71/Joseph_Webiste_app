@@ -8,7 +8,7 @@ from tensorflow.keras.models import load_model
 from helper import get_label
 from transformers import DetrImageProcessor, DetrForObjectDetection
 
-with zipfile.ZipFile('fmd_detection_model.zip' , "r") as z:>
+with zipfile.ZipFile('fmd_detection_model.zip' , "r") as z:
     z.extractall(".")
 import smtplib, ssl
 
