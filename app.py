@@ -125,12 +125,13 @@ if username != '' and password != '' :
             'Home' , 
             'Prediction'
         ])
-        with st.sidebar:
-            email_input = st.text_input("Enter  farmers  emails")
-            if  email_input != ' ':
-                st.session_state.user_mails.append(email_input)
-                with st.container(border = True, height =100):
-                    st.table({"Farmers Mails": st.session_state.user_mails })
+        if option == 'Home'
+            with st.sidebar:
+                email_input = st.text_input("Enter  farmers  emails")
+                if  email_input != '':
+                    st.session_state.user_mails.append(email_input)
+                    with st.container(border = True, height =100):
+                        st.table({"Farmers Mails": st.session_state.user_mails})
         if option == 'Home' : home()
         elif option == 'Prediction' : prediction()
         
