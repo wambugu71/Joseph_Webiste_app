@@ -90,8 +90,9 @@ def prediction() :
             if label == 0 : 
                 st.write('The cattle in the Image have FMD')
                 st.image('Uploaded_file.jpg')
-                for  email_add in receiver_email:
-                    send_html_email(sender_email, sender_password,  email_add, subject, body)
+                with st.spinner("Updating  farmers  and  Veterinary"):
+                    for  email_add in receiver_email:
+                        send_html_email(sender_email, sender_password,  email_add, subject, body)
             elif label == 1 : 
                 st.write('The cattle in the image does not have FMD')
                 st.image('Uploaded_file.jpg')
