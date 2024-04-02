@@ -17,36 +17,41 @@ port = 587  # For starttls
 sender_email = "kenliz1738@gmail.com"
 password = "U1gHcLXtyDNKIZ7h"
 sender_password = password
-receiver_email = "wambugukinyua125@gmail.com"
+receiver_email = ["wambugukinyua125@gmail.com", "andrewmodiny21@gmail.com","josekomma@gmail.com"]
 subject = "Foot  and  Mouth Disease  Alert"
 import smtplib
 from email.mime.text import MIMEText
 body = '''
-Dear Veterinary and Farming Community,
+<html>
+<body>
+<p>Dear Veterinary and Farming Community,</p>
 
-I hope this email finds you well. Unfortunately, I am writing to bring to your attention a matter of utmost importance. It has come to our attention that there is a confirmed outbreak of Foot and Mouth Disease within our region.
+<p>I hope this email finds you well. Unfortunately, I am writing to bring to your attention a matter of utmost importance. It has come to our attention that there is a confirmed outbreak of Foot and Mouth Disease within our region.
 
 Foot and Mouth Disease poses a significant threat to our livestock and agricultural operations. Given its highly contagious nature, it is imperative that we take immediate and decisive action to contain and mitigate the spread of this disease.
+</p>
+<p>
+For veterinarians:</p>
 
-For veterinarians:
-
-Please remain vigilant and report any suspected cases of Foot and Mouth Disease immediately to the relevant authorities.
+<p>Please remain vigilant and report any suspected cases of Foot and Mouth Disease immediately to the relevant authorities.
 Follow strict biosecurity measures in your clinics and when visiting farms to prevent further transmission of the disease.
-Provide guidance and support to farmers on proper containment and management practices.
-For farmers:
+Provide guidance and support to farmers on proper containment and management practices.</p>
+<p>For farmers:</p>
 
-Monitor your livestock closely for any signs of illness, including lameness, blisters, and excessive salivation.
+<p>Monitor your livestock closely for any signs of illness, including lameness, blisters, and excessive salivation.
 Restrict movement of animals within and outside your farm premises to prevent the spread of the disease.
 Implement rigorous biosecurity protocols, such as disinfection of equipment, vehicles, and personnel.
 Collaboration and communication are paramount during this critical time. Let us work together swiftly and efficiently to contain this outbreak and safeguard the health and well-being of our livestock and agricultural industry.
+</p>
+<p>Please do not hesitate to reach out if you require any assistance or have further questions. We will provide updates as the situation develops.</p>
 
-Please do not hesitate to reach out if you require any assistance or have further questions. We will provide updates as the situation develops.
+<p>Thank you for your cooperation and commitment to the health of our community.</p>
 
-Thank you for your cooperation and commitment to the health of our community.
+<p>Best regards,</p>
 
-Best regards,
-
-Foot and  mouth disease  detection org.
+<p>Foot and  mouth disease  detection org.</p>
+</body>
+</html>
 '''
 def send_html_email(sender_email, sender_password, receiver_email, subject, body):
     # Set up the SMTP server
@@ -85,7 +90,8 @@ def prediction() :
             if label == 0 : 
                 st.write('The cattle in the Image have FMD')
                 st.image('Uploaded_file.jpg')
-                send_html_email(sender_email, sender_password, receiver_email, subject, body)
+                for  email_add in receiver_email:
+                    send_html_email(sender_email, sender_password,  email_add, subject, body)
             elif label == 1 : 
                 st.write('The cattle in the image does not have FMD')
                 st.image('Uploaded_file.jpg')
