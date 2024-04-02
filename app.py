@@ -125,7 +125,7 @@ if username != '' and password != '' :
             'Home' , 
             'Prediction'
         ])
-        if option == 'Home':
+        if option == 'Prediction' :
             with st.sidebar:
                 email_input = st.text_input("Enter  farmers  emails")
                 if  email_input != '':
