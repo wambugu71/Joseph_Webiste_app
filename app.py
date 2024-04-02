@@ -69,11 +69,6 @@ def send_html_email(sender_email, sender_password, receiver_email, subject, body
 
 if  "user_mails" not  in st.session_state:
     st.session_state.user_mails  = ["andrewmodiny21@gmail.com","josekomma@gmail.com", "wambugukinyua125@gmail.com"]
-with st.sidebar:
-    email_input = st.text_input("Enter  farmers  emails")
-    st.session_state.user_mails.append(email_input)
-    with st.container(border = True, height =100):
-        st.table({"Farmers mails": st.session_state.user_mails })
     
 def prediction() : 
 
@@ -122,6 +117,7 @@ password = lc.text_input('Password')
 if username != '' and password != '' : 
 
     if username in usernames.keys() and password == usernames[username] : 
+        
         login_container.empty()
         option = st.sidebar.selectbox(
         'Go to' , 
@@ -129,6 +125,12 @@ if username != '' and password != '' :
             'Home' , 
             'Prediction'
         ])
+        with st.sidebar:
+            email_input = st.text_input("Enter  farmers  emails")
+            if  email_input != ' ':
+                st.session_state.user_mails.append(email_input)
+                with st.container(border = True, height =100):
+                    st.table({"Farmers Mails": st.session_state.user_mails })
         if option == 'Home' : home()
         elif option == 'Prediction' : prediction()
         
