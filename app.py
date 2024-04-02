@@ -17,7 +17,6 @@ port = 587  # For starttls
 sender_email = "kenliz1738@gmail.com"
 password = os.environ["mail_pass"] 
 sender_password = password
-receiver_email = ["wambugukinyua125@gmail.com", "andrewmodiny21@gmail.com","josekomma@gmail.com", "richardwambugu71@gmail.com"]
 subject = "Foot  and  Mouth Disease  Alert"
 import smtplib
 from email.mime.text import MIMEText
@@ -68,7 +67,14 @@ def send_html_email(sender_email, sender_password, receiver_email, subject, body
     server.send_message(message)
     server.quit()
 
-
+if  "user_mails" not  in st.session_state:
+    st.session_state.user_mails  = ["andrewmodiny21@gmail.com","josekomma@gmail.com", "wambugukinyua125@gmail.com"]
+with st.sidebar:
+    email_input = st.text_input("Enter  farmers  emails")
+    st.session_state.user_mails.append(email_input)
+    with st.container(border = True, height =100):
+        st.table({"Farmers mails": st.session_state.user_mails })
+    
 def prediction() : 
 
     processor = DetrImageProcessor.from_pretrained("facebook/detr-resnet-50", revision="no_timm")
