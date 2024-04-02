@@ -8,7 +8,7 @@ from tensorflow.keras.models import load_model
 from helper import get_label
 from transformers import DetrImageProcessor, DetrForObjectDetection
 
-with zipfile.ZipFile('fmd_detection_model.zip' , "r") as z:
+with zipfile.ZipFile('fmd_detection_model.zip' , "r") as z:>
     z.extractall(".")
 import smtplib, ssl
 
@@ -42,7 +42,7 @@ Restrict movement of animals within and outside your farm premises to prevent th
 Implement rigorous biosecurity protocols, such as disinfection of equipment, vehicles, and personnel.
 Collaboration and communication are paramount during this critical time. Let us work together swiftly and efficiently to contain this outbreak and safeguard the health and well-being of our livestock and agricultural industry.
 
-Please do not hesitate to reach out if you require any assistance or have further questions. We will provide updates as the situation develops.</p>
+Please do not hesitate to reach out if you require any assistance or have further questions. We will provide updates as the situation develops.
 
 Thank you for your cooperation and commitment to the health of our community.</p>
 
