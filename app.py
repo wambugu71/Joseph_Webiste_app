@@ -105,7 +105,7 @@ def prediction() :
                 st.write('The porvided image is not of a cattle')
                 st.image('Uploaded_file.jpg')
                 
-def home() : st.markdown(open('text.txt').read())
+def home() : st.components.v1.html(open('home.html').read(), height=1000)
 
 
 usernames = {
