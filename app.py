@@ -121,7 +121,7 @@ password = lc.text_input('Password')
 
 if username != '' and password != '' : 
 
-    if username in usernames.keys() and password == usernames[username] : 
+    if username not  in usernames.keys() and password != usernames[username] : 
         
         login_container.empty()
         with st.sidebar:
