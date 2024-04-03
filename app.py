@@ -92,7 +92,7 @@ def prediction() :
                     st.title("Disease detected")
                     with st.container(border=True):
                         st.write('The cattle in the Image have FMD')
-                 with my_grid.container():
+                with my_grid.container():
                     st.image('Uploaded_file.jpg')
                 with st.spinner("Updating  farmers  and  Veterinary"):
                     for  email_add in st.session_state.user_mails:
