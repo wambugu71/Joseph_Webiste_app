@@ -1,7 +1,7 @@
 import streamlit as st 
 import os 
 import zipfile
-
+from streamlit_option_menu import option_menu
 from tensorflow.keras.models import load_model
 
 
@@ -119,12 +119,8 @@ if username != '' and password != '' :
     if username in usernames.keys() and password == usernames[username] : 
         
         login_container.empty()
-        option = st.sidebar.selectbox(
-        'Go to' , 
-        [ 
-            'Home' , 
-            'Prediction'
-        ])
+        option = option_menu("Main Menu", ["Home", 'prediction'], 
+        icons=['house', 'gear'], menu_icon="cast", default_index=1)
         if option == 'Prediction' :
             with st.sidebar:
                 email_input = st.text_input("Enter  farmers  emails")
