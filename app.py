@@ -77,7 +77,7 @@ def prediction() :
     model = load_model('fmd_detection_model.h5')
 
     images = st.sidebar.file_uploader('Upload the Image' , type = ['jpg' , 'jpeg' , 'png' , 'webp'] , accept_multiple_files = True)
-    if  images == None:
+    if  images == []:
         st.components.v1.html(open('no_uploaded.html').read(), height=1000)
     if images : 
 
