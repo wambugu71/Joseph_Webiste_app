@@ -87,7 +87,7 @@ def prediction() :
             label = get_label(model  , bb_model , processor)
 
             if label == 0 :
-                my_grid = grid(0.4,0.6)
+                my_grid = grid([0.4,0.6])
                 with my_grid.container():
                     st.title("Disease detected")
                     with st.container(border=True):
