@@ -120,7 +120,7 @@ if username != '' and password != '' :
         
         login_container.empty()
         with st.sidebar:
-            option = option_menu("Main Menu", ["Home", 'prediction'], 
+            option = option_menu("Main Menu", ["Home", 'Prediction'], 
             icons=['house', 'gear'], menu_icon="cast", default_index=1)
         if option == 'Prediction' :
             with st.sidebar:
