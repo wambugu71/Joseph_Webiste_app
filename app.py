@@ -6,7 +6,7 @@ from tensorflow.keras.models import load_model
 from streamlit_extras.grid import grid
 from helper import get_label
 from transformers import DetrImageProcessor, DetrForObjectDetection
-
+st.set_page_config(layout="wide", page_title="Foot and  Mouth Detection", initial_sidebar_state="expanded")
 with zipfile.ZipFile('fmd_detection_model.zip' , "r") as z:
     z.extractall(".")
 import smtplib, ssl
