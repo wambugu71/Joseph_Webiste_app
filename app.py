@@ -3,8 +3,7 @@ import os
 import zipfile
 from streamlit_option_menu import option_menu
 from tensorflow.keras.models import load_model
-
-
+from streamlit_extras.grid import grid
 from helper import get_label
 from transformers import DetrImageProcessor, DetrForObjectDetection
 
@@ -87,9 +86,14 @@ def prediction() :
             
             label = get_label(model  , bb_model , processor)
 
-            if label == 0 : 
-                st.write('The cattle in the Image have FMD')
-                st.image('Uploaded_file.jpg')
+            if label == 0 :
+                my_grid = grid(0.4,0.6)
+                with my_grid.container():
+                    st.title("Disease detected")
+                    with st.container(border=True):
+                        st.write('The cattle in the Image have FMD')
+                 with my_grid.container():
+                    st.image('Uploaded_file.jpg')
                 with st.spinner("Updating  farmers  and  Veterinary"):
                     for  email_add in st.session_state.user_mails:
                         send_html_email(sender_email, sender_password,  email_add, subject, body)
