@@ -94,7 +94,7 @@ def prediction() :
                         with st.container(border=True):
                             st.write('The cattle in the Image have FMD')
                     with my_grid.container():
-                        st.image('Uploaded_file.jpg', use_container_width=True)
+                        st.image('Uploaded_file.jpg',caption="Foot  and  Mouth detected")
                 with st.spinner("Updating  farmers  and  Veterinary"):
                     for  email_add in st.session_state.user_mails:
                         send_html_email(sender_email, sender_password,  email_add, subject, body)
