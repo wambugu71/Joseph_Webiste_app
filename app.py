@@ -96,9 +96,12 @@ def prediction() :
                             st.write('The cattle in the Image have FMD')
                     with my_grid.container():
                         st.image('Uploaded_file.jpg',caption="Foot  and  Mouth detected")
-                with st.spinner("Updating  farmers  and  Veterinary"):
-                    for  email_add in st.session_state.user_mails:
-                        send_html_email(sender_email, sender_password,  email_add, subject, body)
+                with st.container(border = True):
+                    notify_users = st.button("Notify Other  Farmers")
+                    if  notify_users:
+                        with st.spinner("Updating  farmers  and  Veterinary"):
+                            for  email_add in st.session_state.user_mails:
+                                send_html_email(sender_email, sender_password,  email_add, subject, body)
             elif label == 1 : 
                 st.write('The cattle in the image does not have FMD')
                 st.image('Uploaded_file.jpg')
