@@ -20,35 +20,44 @@ subject = "Foot  and  Mouth Disease  Alert"
 import smtplib
 from email.mime.text import MIMEText
 body = '''
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foot and Mouth Disease Outbreak Alert</title>
+</head>
 <body>
-Dear Veterinary and Farming Community,
+    <p>Dear Veterinary and Farming Community,</p>
 
-I hope this email finds you well. Unfortunately, I am writing to bring to your attention a matter of utmost importance. It has come to our attention that there is a confirmed outbreak of Foot and Mouth Disease within our region.
+    <p>I hope this email finds you well. Unfortunately, I am writing to bring to your attention a matter of utmost importance. It has come to our attention that there is a confirmed outbreak of Foot and Mouth Disease within our region.</p>
 
-Foot and Mouth Disease poses a significant threat to our livestock and agricultural operations. Given its highly contagious nature, it is imperative that we take immediate and decisive action to contain and mitigate the spread of this disease.
+    <p>Foot and Mouth Disease poses a significant threat to our livestock and agricultural operations. Given its highly contagious nature, it is imperative that we take immediate and decisive action to contain and mitigate the spread of this disease.</p>
 
-For veterinarians:
+    <p><strong>For veterinarians:</strong></p>
+    <ul>
+        <li>Please remain vigilant and report any suspected cases of Foot and Mouth Disease immediately to the relevant authorities.</li>
+        <li>Follow strict biosecurity measures in your clinics and when visiting farms to prevent further transmission of the disease.</li>
+        <li>Provide guidance and support to farmers on proper containment and management practices.</li>
+    </ul>
 
-Please remain vigilant and report any suspected cases of Foot and Mouth Disease immediately to the relevant authorities.
-Follow strict biosecurity measures in your clinics and when visiting farms to prevent further transmission of the disease.
-Provide guidance and support to farmers on proper containment and management practices.</p>
-For farmers:
+    <p><strong>For farmers:</strong></p>
+    <ul>
+        <li>Monitor your livestock closely for any signs of illness, including lameness, blisters, and excessive salivation.</li>
+        <li>Restrict movement of animals within and outside your farm premises to prevent the spread of the disease.</li>
+        <li>Implement rigorous biosecurity protocols, such as disinfection of equipment, vehicles, and personnel.</li>
+    </ul>
 
-Monitor your livestock closely for any signs of illness, including lameness, blisters, and excessive salivation.
-Restrict movement of animals within and outside your farm premises to prevent the spread of the disease.
-Implement rigorous biosecurity protocols, such as disinfection of equipment, vehicles, and personnel.
-Collaboration and communication are paramount during this critical time. Let us work together swiftly and efficiently to contain this outbreak and safeguard the health and well-being of our livestock and agricultural industry.
+    <p>Collaboration and communication are paramount during this critical time. Let us work together swiftly and efficiently to contain this outbreak and safeguard the health and well-being of our livestock and agricultural industry.</p>
 
-Please do not hesitate to reach out if you require any assistance or have further questions. We will provide updates as the situation develops.
+    <p>Please do not hesitate to reach out if you require any assistance or have further questions. We will provide updates as the situation develops.</p>
 
-Thank you for your cooperation and commitment to the health of our community.</p>
+    <p>Thank you for your cooperation and commitment to the health of our community.</p>
 
-Best regards,
-
-Foot and  mouth disease  detection org.
+    <p>Best regards,<br>Foot and Mouth Disease Detection Organization</p>
 </body>
 </html>
+
 '''
 def send_html_email(sender_email, sender_password, receiver_email, subject, body):
     # Set up the SMTP server
