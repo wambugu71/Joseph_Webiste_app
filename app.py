@@ -149,9 +149,9 @@ if username != '' and password != '' :
         
         login_container.empty()
         with st.sidebar:
-            option = option_menu("Main Menu", ["Home", 'Prediction'], 
-            icons=['house', 'gear'], menu_icon="cast", default_index=0)
-        if option == 'Prediction' :
+            option = option_menu("Main Menu", ["Home", 'Predict Image'], 
+            icons=['house', 'robot'], menu_icon="cast", default_index=0)
+        if option == 'Predict Image' :
             with st.sidebar:
                 email_input = st.text_input("Enter  farmers  emails")
                 if  email_input != '':
