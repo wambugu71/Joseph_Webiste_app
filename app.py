@@ -103,6 +103,7 @@ def prediction() :
                         with st.spinner("Updating  farmers  and  Veterinary"):
                             for  email_add in st.session_state.user_mails:
                                 send_html_email(sender_email, sender_password,  email_add, subject, body)
+                            st.toast("All farmers  notified.")
             elif label == 1 : 
                 st.write('The cattle in the image does not have FMD')
                 st.image('Uploaded_file.jpg')
