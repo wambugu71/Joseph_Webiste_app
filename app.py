@@ -90,14 +90,15 @@ def prediction() :
             if label == 0 :
                 with st.container(border =True):
                     my_grid = grid([0.4,0.6])
+                    st.toast("Disease  detected
                     with my_grid.container():
-                        st.title("Disease detected")
+                        st.title("Disease detected❗❗")
                         with st.container(border=True):
                             st.write('The cattle in the Image have FMD')
                     with my_grid.container():
                         st.image('Uploaded_file.jpg',caption="Foot  and  Mouth detected")
                 with st.container(border = True):
-                    notify_users = st.button("Notify Other  Farmers")
+                    notify_users = st.button("Notify Other  Farmers", type="primary")
                     if  notify_users:
                         with st.spinner("Updating  farmers  and  Veterinary"):
                             for  email_add in st.session_state.user_mails:
