@@ -90,9 +90,9 @@ def prediction() :
             if label == 0 :
                 with st.container(border =True):
                     my_grid = grid([0.4,0.6])
-                    st.toast("Disease  detected
+                    st.toast("Disease  detected ❗❗❗")
                     with my_grid.container():
-                        st.title("Disease detected❗❗")
+                        st.title("Disease detected")
                         with st.container(border=True):
                             st.write('The cattle in the Image have FMD')
                     with my_grid.container():
