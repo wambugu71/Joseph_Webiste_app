@@ -149,9 +149,9 @@ if username != '' and password != '' :
         
         login_container.empty()
         with st.sidebar:
-            option = option_menu("Main Menu", ["Home", 'Predict'], 
+            option = option_menu("Main Menu", ["Home", 'Predict Photo'], 
             icons=['house', 'robot'], menu_icon="cast", default_index=0)
-        if option == 'Predict' :
+        if option == 'Predict Photo':
             with st.sidebar:
                 email_input = st.text_input("Enter  farmers  emails")
                 if  email_input != '':
@@ -159,7 +159,7 @@ if username != '' and password != '' :
                     with st.container(border = True, height =100):
                         st.table({"Farmers Mails": st.session_state.user_mails})
         if option == 'Home' : home()
-        elif option == 'Prediction' : prediction()
+        elif option == 'Predict Photo' : prediction()
         
 
     else : st.write('Invalid Username or Pasword')
