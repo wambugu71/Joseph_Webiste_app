@@ -114,10 +114,19 @@ def prediction() :
                                 send_html_email(sender_email, sender_password,  email_add, subject, body)
                             st.toast("All farmers  notified.")
             elif label == 1 : 
-                st.write('The cattle in the image does not have FMD')
-                st.image('Uploaded_file.jpg')
+                with st.container(border =True):
+                    my_grid = grid([0.4,0.6])
+                    st.toast("No disease detected")
+                    with my_grid.container():
+                        st.title("No Disease  detected.")
+                        with st.container(border=True):
+                            st.write('The cattle in the Image have No FMD')
+                    with my_grid.container():
+                        st.image('Uploaded_file.jpg',caption="Foot  and  Mouth not detected")
+                #st.write('The cattle in the image does not have FMD')
+                #st.image('Uploaded_file.jpg')
             else : 
-                st.write('The porvided image is not of a cattle')
+                st.error('The porvided image is not of a cattle')
                 st.image('Uploaded_file.jpg')
                 
 def home() : st.components.v1.html(open('home.html').read(), height=1000)
